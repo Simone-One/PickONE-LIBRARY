@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>PickONE Library</title>
+</head>
+    <body>
+        <h1>PickONE Library</h1>
+        <h4>La libreria personalizzata per te!</h4>
+        <div class="spazio"></div>
+        <h1>Accedi</h1>
+        <h4>Accedi in un attimo, scrivi il tuo nome e selezionalo, poi fai click su Accedi.</h4>
+        {% block content %}
+        <form action="{{ url_for('verify_user') }}" method="post" class="form">
+            <label for="name">Nome</label>
+            <input type="text" name="name" id="name" list="nomi" placeholder="Scrivi qui il tuo nome..." required>
+            <datalist id="nomi">
+                <option value="Simone Carassale"></option>
+                <option value="Pietro Mergoni"></option>
+                <option value="Giulia Romano"></option>
+                <option value="Lorenzo Giacché"></option>
+                <option value="Andrea Quercioli"></option>
+                <option value="Alessia Amico"></option>
+                <option value="Simone Metteotti"></option>
+            </datalist>
+        <button class="button" type="submit">Accedi!</button>
+        </form>
+        {% endblock %}
+    </body>
+</html>

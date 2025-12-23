@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>PickONE Library</title>
+</head>
+<body>
+    <h2>PickONE Library</h2>
+    <h4>Powered by ONE AI</h4>
+    <div class="spazio"></div>
+    {% block content %}
+    <h1>{{"Buongiorno, " + name}}</h1>
+    <hr>
+    <h2>I consigli di oggi</h2>
+    <div class="cards_books">
+        <div class="card">
+            <h1>{{ libri["Simone Carassale"]["La Grammatica del Graphic Design"][0] }}</h1>
+            <h3>{{ libri["Simone Carassale"][0] }}</h3>
+            <a href="">
+            <button>Prendi</button>
+            </a>
+        </div>
+        <div class="spazio"></div>
+        <div class="card">
+            <h1>{{numero_libro}}</h1>
+            <h3>La Grammtica del Graphic Design</h3>
+            <a href="">
+            <button>Prendi</button>
+            </a>
+        </div>
+        <div class="spazio"></div>
+        <div class="card">
+            <h1>{{numero_libro}}</h1>
+            <h3>Diario di una Schiappa Vuoto Cosmico</h3>
+            <a href="">
+            <button>Prendi</button>
+            </a>
+        </div>
+        <div class="spazio"></div>
+        <div class="card">
+            <h1>{{numero_libro}}</h1>
+            <h3>Il Signore degli Anelli</h3>
+            <a href="">
+            <button>Prendi</button>
+            </a>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
