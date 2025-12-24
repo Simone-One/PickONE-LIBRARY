@@ -12,9 +12,17 @@
         <div class="logo"><h4 class="footer-gradient">Powered by ONE AI</h4></div>
         <div class="spazio"></div>
         <hr>
-        <p>Non è la pagina che desideravi? <a href="{{ url_for('home') }}">Torna alla pagina di accesso ↪</a></p>
+        {% if name %}
+            <p>Non è la pagina che desideravi? <a href="{{ url_for('verify_user2') }}">Torna alla home ↪</a></p>
+        {% else %}
+            <p>Non è la pagina che desideravi? <a href="{{ url_for('home') }}">Torna alla pagina di accesso ↪</a></p>
+        {% endif %}
         <hr>
-        <h1>Informazioni su ONE AI e sulla privacy</h1>
+        {% if name %}
+            <h1>{{ name }}, ecco le informazioni su ONE AI e sulla privacy</h1>
+        {% else %}
+            <h1>Informazioni su ONE AI e sulla privacy</h1>
+        {% endif %}
         <h2>Come utilizziamo ONE AI nei nostri servizi</h2>
         <p>PickONE Library utilizza sistemi avanzati di Intelligenza Artificiale mista a codice sistemico per offrirti la migliore esperienza e quanto più personalizzata. Il sistema ONE AI è stato creato da Simone Carassale nel 2025, ed è alla base del sistema intelligente di PickONE Library.</p>
         <p>Ecco dove utilizziamo ONE AI:</p>
@@ -48,8 +56,13 @@
             <p class="errore">{{ errore }}</p>
         {% endif %}
         <hr>
+        {% if name %}
+        <h1>Torna alla home</h1>
+        <a href="{{ url_for('verify_user2') }}"><button class="button">Torna alla home</button></a>
+        {% else %}
         <h1>Torna all'accesso</h1>
         <a href="{{ url_for('home') }}"><button class="button">Torna alla pagina di Accesso</button></a>
+        {% endif %}
         <div class="footer-style">
             <footer class="site-footer">
                 © {{ anno_corrente }} PickONE Library realizzato da Simone Carassale
