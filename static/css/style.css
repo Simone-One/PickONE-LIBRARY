@@ -13,7 +13,7 @@ h4 {
     display: flex;
 }
 .spazio {
-    padding: 1em;
+    padding: 1.5em;
 }
 .card {
     border: #1e0f03 solid 1px;
@@ -24,4 +24,33 @@ h4 {
 button {
     min-width: 100px;
     min-height: 25px;
+}
+.errore {
+    color: rgb(121, 0, 0);
+}
+.footer-style {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 11px;
+    color: #fff2e6;
+    background-color: rgb(216, 208, 190);  /* colore sfondo footer */
+    color: #1e0f03;               /* colore testo */
+    padding: 16px;
+    text-align: center;
+}
+.footer-gradient {
+    font-weight: bolder;
+    background: linear-gradient(rgb(82, 133, 194), rgb(145, 107, 169), rgb(222, 97, 55)); /* colori del gradiente */
+    -webkit-background-clip: text; /* per Chrome/Safari */
+    background-clip: text;         /* per gli altri browser moderni */
+    color: transparent;            /* rende il testo trasparente così si vede il gradiente */
+    text-shadow:
+        0 0 18px rgba(145, 107, 169, 0.55),
+        0 0 32px rgba(82, 133, 194, 0.45);
+}
+.logo {
+    margin: 0;
+    margin-bottom: 0.1em;
 }

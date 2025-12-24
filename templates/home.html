@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>PickONE Library</title>
+    <title>PickONE Library ACCESSO</title>
 </head>
     <body>
-        <h1>PickONE Library</h1>
-        <h4>La libreria personalizzata per te!</h4>
+        <h1 class="logo">PickONE Library</h1>
+        <h4 class="logo">La libreria personalizzata per te!</h4>
         <div class="spazio"></div>
         <h1>Accedi</h1>
         <h4>Accedi in un attimo, scrivi il tuo nome e selezionalo, poi fai click su Accedi.</h4>
@@ -27,6 +27,19 @@
             </datalist>
         <button class="button" type="submit">Accedi!</button>
         </form>
+        {% if errore %}
+            <p class="errore">{{ errore }}</p>
+        {% endif %}
+        <div class="footer-style">
+            <footer class="site-footer">
+                © {{ anno_corrente }} PickONE Library realizzato da Simone Carassale
+            </footer>
+            <footer class="footer-gradient">
+                <a href="{{ url_for('info_oneai') }}" class="footer-gradient">
+                Powered by ® ONE AI ↪
+                </a>
+            </footer>
+        </div>
         {% endblock %}
     </body>
 </html>

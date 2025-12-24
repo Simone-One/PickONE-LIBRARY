@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>PickONE Library INFO</title>
+</head>
+    {% block content %}
+    <body>
+        <h2 class="logo">PickONE Library</h2>
+        <div class="logo"><h4 class="footer-gradient">Powered by ONE AI</h4></div>
+        <div class="spazio"></div>
+        <hr>
+        <p>Non è la pagina che desideravi? <a href="{{ url_for('home') }}">Torna alla pagina di accesso ↪</a></p>
+        <hr>
+        <h1>Informazioni su ONE AI e sulla privacy</h1>
+        <h2>Come utilizziamo ONE AI nei nostri servizi</h2>
+        <p>PickONE Library utilizza sistemi avanzati di Intelligenza Artificiale mista a codice sistemico per offrirti la migliore esperienza e quanto più personalizzata. Il sistema ONE AI è stato creato da Simone Carassale nel 2025, ed è alla base del sistema intelligente di PickONE Library.</p>
+        <p>Ecco dove utilizziamo ONE AI:</p>
+        <ul>
+            <li><strong>Raccomandazione Intelligente dei libri basata su compatibilità</strong>: questo sistema automatico utilizza i dati dell'utente per consigliare i libri che potrebbero interessare maggiormente. I dati esposti a modelli di Intelligenza Artificiale sono: caratteristiche dell'utente, libri letti in precedenza, valutazioni dei libri letti in precedenza, altre interazioni di basso livello.</li>
+            <li><strong>Ricerca dei libri semplice</strong>: la ricerca dei libri nel database comporta l'utilizzo di un modello di Intelligenza Artificiale basato su embedding che mostra in tempo reale i migliori risultati. Non sono coinvolti in nessun modo i dati dell'utente.</li>
+            <li><strong>Ricerca dei libri avanzata</strong>: la ricerca dei libri avanzata comporta l'utilizzo di un modello di Intelligenza Artificiale a embedding, utilizzando caratteristiche dell'utente, libri letti in precedenza, valutazioni dei libri letti in precedenza e altre interazioni di basso livello, trova una serie di libri adatti alla domanda dell'utente e li invia a un altro modello di Intelligenza Artificiale LLM che li analizza e genera una risposta.</li>
+        </ul>
+        <h2>Privacy con ONE AI</h2>
+        <p>ONE AI non comporta alcun rischio di privacy all'utente. I dati dell'utente, salvati localmente sul computer e mai esposti a internet, non sono considerati "sensibili" ma bensì dati personali comuni o identificativi secondo il GDPR. Inoltre i modelli di Intelligenza Artificiale utilizzati da ONE AI sono eseguiti localmente sul computer stesso e non vengolo elaborati in server esterni sul cloud.</p>
+        <hr>
+        <h1>Vuoi ricevere tutti i tuoi dati che abbiamo?</h1>
+        <p>Compilando questo modulo riceverai via e-mail tutti i dati che abbiamo su di te</p>
+        <form action="{{ url_for('dati') }}" method="post" class="form">
+            <label for="name">Nome e Cognome</label>
+            <input type="text" name="name" id="name" list="nomi" placeholder="Inserisci il tuo nome..." required>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Inserisci la tua e-mail..." required>
+            <datalist id="nomi">
+                <option value="Simone Carassale"></option>
+                <option value="Pietro Mergoni"></option>
+                <option value="Giulia Romano"></option>
+                <option value="Lorenzo Giacché"></option>
+                <option value="Andrea Quercioli"></option>
+                <option value="Alessia Amico"></option>
+                <option value="Simone Metteotti"></option>
+            </datalist>
+        <button class="button" type="submit">Fatto!</button>
+        </form>
+        {% if errore %}
+            <p class="errore">{{ errore }}</p>
+        {% endif %}
+        <hr>
+        <h1>Torna all'accesso</h1>
+        <a href="{{ url_for('home') }}"><button class="button">Torna alla pagina di Accesso</button></a>
+        <div class="footer-style">
+            <footer class="site-footer">
+                © {{ anno_corrente }} PickONE Library realizzato da Simone Carassale
+            </footer>
+            <footer class="footer-gradient">
+                Powered by ® ONE AI
+            </footer>
+        </div>
+    </body>
+    {% endblock %}
+</html>

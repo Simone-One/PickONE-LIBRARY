@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>PickONE Library</title>
+    <title>PickONE Library HOME</title>
 </head>
 <body>
-    <h2>PickONE Library</h2>
-    <h4>Powered by ONE AI</h4>
+    <h2 class="logo">PickONE Library</h2>
+    <div class="logo"><h4 class="footer-gradient">Powered by ONE AI</h4></div>
     <div class="spazio"></div>
     {% block content %}
     <h1>{{"Buongiorno, " + name}}</h1>
     <hr>
-    <h2>I consigli di oggi</h2>
+    <h2>Potrebbero piacerti...</h2>
     <div class="cards_books">
         <div class="card">
             <h1>{{ libri["Simone Carassale"]["La Grammatica del Graphic Design"][0] }}</h1>
@@ -46,6 +46,16 @@
             <button>Prendi</button>
             </a>
         </div>
+    </div>
+    <div class="footer-style">
+        <footer class="site-footer">
+            © {{ anno_corrente }} PickONE Library realizzato da Simone Carassale
+        </footer>
+        <footer class="footer-gradient">
+            <a href="{{ url_for('info_oneai') }}" class="footer-gradient">
+            Powered by ® ONE AI ↪
+            </a>
+        </footer>
     </div>
     {% endblock %}
 </body>
