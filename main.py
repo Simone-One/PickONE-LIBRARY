@@ -7,7 +7,7 @@ import os
 anno_corrente = str(date.today().year)
 
 app = Flask(__name__)
-app.secret_key = 'c02d69ba291fe90819bbf5b95ecd02ee1e4c7a8a17fd391b69fcdffae3c5e642'
+app.secret_key = 'CHIAVE_SEGRETA'
 
 libri = {"Simone Carassale": {"La Grammatica del Graphic Design": ["74"], "Steve Jobs: una biografia illustrata": ["94"]}}
 NOMI_VALIDI = ["Simone Carassale", "Pietro Mergoni", "Giulia Romano", "Lorenzo Giacché", "Andrea Quercioli", "Alessia Amico", "Simone Metteotti"]
